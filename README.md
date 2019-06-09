@@ -16,6 +16,15 @@
 * Added PriceView to handle logic as described
 * Added api/get-price and associated view to urls.py
 
+## Unit Testing
+* Added API unit testing
+1. Required parameters
+2. Date Formatting
+3. Normal 2018 prices
+4. Normal 2019 prices
+5. Black Friday prices
+6. GiftCard prices
+7. GiftCards on Black Friday
 
 
 
