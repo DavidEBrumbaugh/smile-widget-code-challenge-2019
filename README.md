@@ -17,7 +17,7 @@
 * Added api/get-price and associated view to urls.py
 
 ## Unit Testing
-* Added API unit testing
+### Added API unit testing
 1. Required parameters
 2. Date Formatting
 3. Normal 2018 prices
