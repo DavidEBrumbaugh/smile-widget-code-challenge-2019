@@ -1,3 +1,64 @@
+# Challenge Completed
+
+## Updates to models
+* New model: ProductPrice has been added
+* code is now unique for Product and GiftCard to assure that get_object_or_404 functions properly
+* Help messages are updated to reflect new models
+
+## General Updates
+* Added DRF (Django Rest Framework) to the Dockerfile
+* Added migrations for the model updates
+* Added Models to admin
+* Added ProductPrice records via admin
+* Exported fixtures and replaced fixture file
+
+## Functional Additions
+* Added PriceView to handle get logic:
+  * _productCode_
+    * productCode is required: 404 on failure
+    * productCode must match existing product: 404 on failure
+    * if productCode is valid, product retrieved, **price** is set
+  * _date_
+    * date is requied: 404 on failure
+    * date must be formatted 'YYYY-MM-DD': 406 on failure
+    * Retrieve ProductPrice objects for product and date
+      override **price** (if multiple prices exist, select lowest **price**)
+  * _giftCardCode_
+    * GiftCard retrieved for giftCardCode and date: Ignore failures
+    * If GiftCard exists: 
+          If **amount** is less than **price** subtract **amount** from **price**
+          Else price is zero
+  * Return Response with formatted **price** (as dictionary)
+  
+* Added api/get-price and associated view to urls.py
+
+## Unit Testing
+### Added API unit testing
+1. Required parameters
+2. Date Formatting
+3. Normal 2018 prices
+4. Normal 2019 prices
+5. Black Friday prices
+6. GiftCard prices
+7. GiftCards on Black Friday
+
+### To Test on Docker
+
+From project directory
+* `>>> sudo docker-compose up --build` (Starts and initiizes container)
+* `>>> sudo docker ps` (Gets the container id)
+* `>>> sudo docker exec -it <container id> /bin/bash`
+* `$ cd smilewidgets/`
+* `$ python manage.py test products`
+
+### Tests Passed
+All 7 tests passed when this branch was installed, and the above process was followed.
+
+
+
+
+See the original requirements below.
+---
 # smile-widget-code-challenge
 
 The Smile Widget Company currently sells two types of smile widgets: a Big Widget and a Small Widget.  We'd like to add more flexibility to our product pricing.
