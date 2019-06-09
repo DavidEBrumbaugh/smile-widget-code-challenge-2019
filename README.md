@@ -13,23 +13,23 @@
 * Exported fixtures and replaced fixture file
 
 ## Functional Additions
-* Added PriceView to handle logic:
-  * **productCode
+* Added PriceView to handle get logic:
+  * _productCode_
     * productCode is required: 404 on failure
     * productCode must match existing product: 404 on failure
-    * if productCode is valid, product retrieved, **price is set
-  * **date
+    * if productCode is valid, product retrieved, **price** is set
+  * _date_
     * date is requied: 404 on failure
     * date must be formatted 'YYYY-MM-DD': 406 on failure
     * if ProductPrice ojbects exist that match the product code, 
       and date is between start and end date (or after start date if no end date):
-      override **price (if multiple prices exist, select lowest **price)
-  * **giftCardCode
+      override **price** (if multiple prices exist, select lowest **price**)
+  * _giftCardCode_
     * GiftCard retrieved for giftCardCode and date: Ignore failures
     * If GiftCard exists: 
-          If amount is less than *price subtract **amount from **price 
+          If **amount** is less than **price** subtract **amount** from **price**
           Else price is zero
-  * Return Response with formatted price as dictionary
+  * Return Response with formatted **price** (as dictionary)
   
 * Added api/get-price and associated view to urls.py
 
