@@ -26,6 +26,18 @@
 6. GiftCard prices
 7. GiftCards on Black Friday
 
+### To Test on Docker
+
+From project directory
+* `>>> sudo docker-compose up --build` (Starts and initiizes container)
+* `>>> sudo docker ps` (Gets the container id)
+* `>>> sudo docker exec -it <container id> /bin/bash`
+* `$ cd smilewidgets/`
+* `$ python manage.py test products`
+
+### Tests Passed
+All 7 tests passed when this branch was installed, and the above process was followed.
+
 
 
 
