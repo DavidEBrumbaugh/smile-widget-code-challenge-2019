@@ -1,3 +1,27 @@
+# Challenge Completed
+
+## Updates to models
+* New model: ProductPrice has been added
+* code is now unique for Product and GiftCard to assure that get_object_or_404 functions properly
+* Help messages are updated to reflect new models
+
+## General Updates
+* Added DRF (Django Rest Framework) to the Dockerfile
+* Added migrations for the model updates
+* Added Models to admin
+* Added ProductPrice records via admin
+* Exported fixtures and replaced fixture file
+
+## Functional Additions
+* Added PriceView to handle logic as described
+* Added api/get-price and associated view to urls.py
+
+
+
+
+
+See the original requirements below.
+---
 # smile-widget-code-challenge
 
 The Smile Widget Company currently sells two types of smile widgets: a Big Widget and a Small Widget.  We'd like to add more flexibility to our product pricing.
