@@ -21,8 +21,7 @@
   * _date_
     * date is requied: 404 on failure
     * date must be formatted 'YYYY-MM-DD': 406 on failure
-    * if ProductPrice ojbects exist that match the product code, 
-      and date is between start and end date (or after start date if no end date):
+    * Retrieve ProductPrice objects for product and date
       override **price** (if multiple prices exist, select lowest **price**)
   * _giftCardCode_
     * GiftCard retrieved for giftCardCode and date: Ignore failures
